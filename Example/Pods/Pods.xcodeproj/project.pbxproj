@@ -1,0 +1,795 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18608846BBDD39782716E339DBB4CD79 /* RSNumberPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = D734ACAB8DBA43F4B80FCFF282BFADD6 /* RSNumberPad.swift */; };
+		399DCC7EEA3E7D53DFE8FCC97BC57E7C /* Pods-RSNumberPad_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3AB31D1A9BCC6EB960B03C2CA8199DB /* Pods-RSNumberPad_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4253B9919F60488E3684BF2DBFAA6F2E /* KeyPadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F1051EFE44912977774C658952679 /* KeyPadViewModel.swift */; };
+		50AC48F4E139D869D2C4EF7B0BB47DCB /* RandomKeyPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF77D852ECEB4F45D7D9EB937716347 /* RandomKeyPad.swift */; };
+		55BE16FBE883DE3F9E577522D9ACFE96 /* KeyPadButtonState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BA4C8A8F394AB6C51E9E7106B6C50F /* KeyPadButtonState.swift */; };
+		66AF39F5F87EF9E62396616B039771AC /* RSNumberPad-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B84F0EABE763115E422C10D92E02A8F /* RSNumberPad-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7320B8458E9950ABE327CF973AF8B248 /* Pods-RSNumberPad_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A1FBF8DB5E0934336FCC8AF7A645E5B /* Pods-RSNumberPad_Example-dummy.m */; };
+		73D9FC4DE17E32A43550D269261425D6 /* Pods-RSNumberPad_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AC7DCE33005406D2C187DA357C0C505F /* Pods-RSNumberPad_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		91C0B8C5C01BC318CCB95C3DCF55AC2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		944785D7DC7D1FC5FDA80A22C5B4E11F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		95096D91E782ABEA7228A2C244434154 /* Pods-RSNumberPad_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 926EAD2D00B1A05077171E1FB4FF06D7 /* Pods-RSNumberPad_Tests-dummy.m */; };
+		9CD4FF33F21DDD794DDDD3C2FC27FE57 /* RSNumberPad-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 21A2B1D3743A9A922B03BC7228BB3485 /* RSNumberPad-dummy.m */; };
+		B3F6F8462A81F2C89E03B6C50BDA6630 /* KeypadViewCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E1322152722DD753C0A8488EB0D895 /* KeypadViewCreator.swift */; };
+		CB3E022C0C70BFAA3A81818B6C3CC793 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		DDFD4E644466E0693BEBC0A5B627E017 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D875781C6E7170CFD61FB037F215166 /* KeychainManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84DD01B7F2A07391BD0231E52283412F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CC7C81F25A9D7E59B8F95A11322AB76B;
+			remoteInfo = RSNumberPad;
+		};
+		C4F0F66F4CB5ED7C44051E393166DD01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C894760D07C8A6BC192BA5584FB18528;
+			remoteInfo = "Pods-RSNumberPad_Example";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03B5A8A25317BB695C5FD86708FE19F8 /* Pods-RSNumberPad_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSNumberPad_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		09D5EDAD3CA6BF5F4375260ADB935703 /* Pods-RSNumberPad_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSNumberPad_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0ABC3D638986A864E61F2D26C7B906F4 /* RSNumberPad */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = RSNumberPad; path = RSNumberPad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AFA485C27532D94337109935699DDD3 /* RSNumberPad.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = RSNumberPad.podspec; sourceTree = "<group>"; tabWidth = 2; };
+		0FDE2A5B442A33C6678D7164CA86736E /* Pods-RSNumberPad_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSNumberPad_Example.release.xcconfig"; sourceTree = "<group>"; };
+		129894AA3E7C1FDDF281B1AC510884B9 /* Pods-RSNumberPad_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RSNumberPad_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		14E96639AAB41CFE05E88CA6CFC128C7 /* Pods-RSNumberPad_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RSNumberPad_Example-frameworks.sh"; sourceTree = "<group>"; };
+		15E1322152722DD753C0A8488EB0D895 /* KeypadViewCreator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeypadViewCreator.swift; path = Sources/RSNumberPad/KeypadViewCreator.swift; sourceTree = "<group>"; };
+		21A2B1D3743A9A922B03BC7228BB3485 /* RSNumberPad-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RSNumberPad-dummy.m"; sourceTree = "<group>"; };
+		36B36730879ED04EAC26FD74D80504CD /* Pods-RSNumberPad_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSNumberPad_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		38BA4C8A8F394AB6C51E9E7106B6C50F /* KeyPadButtonState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyPadButtonState.swift; path = Sources/RSNumberPad/KeyPadButtonState.swift; sourceTree = "<group>"; };
+		3B0F1051EFE44912977774C658952679 /* KeyPadViewModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyPadViewModel.swift; path = Sources/RSNumberPad/KeyPadViewModel.swift; sourceTree = "<group>"; };
+		525E2CFE775FCB95D98D10ACBE7FA853 /* Pods-RSNumberPad_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-RSNumberPad_Tests"; path = Pods_RSNumberPad_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59AC8BACFC3EDA2985E5C8C5DDC39F5B /* Pods-RSNumberPad_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSNumberPad_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		5D875781C6E7170CFD61FB037F215166 /* KeychainManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainManager.swift; path = Sources/RSNumberPad/KeychainManager.swift; sourceTree = "<group>"; };
+		5FF77D852ECEB4F45D7D9EB937716347 /* RandomKeyPad.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RandomKeyPad.swift; path = Sources/RSNumberPad/RandomKeyPad.swift; sourceTree = "<group>"; };
+		608605B3A2A833F3157A9E12B708841B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		610D3EF7B0681EB8279C839B763E59FA /* Pods-RSNumberPad_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RSNumberPad_Tests.modulemap"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		761703394BA3948E5EC68A84FE7C008B /* RSNumberPad-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSNumberPad-prefix.pch"; sourceTree = "<group>"; };
+		7CB6E3F1711056960FD6304BA62DE038 /* Pods-RSNumberPad_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RSNumberPad_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8392BA762FDFEBC38DAEE79F613CB0D5 /* Pods-RSNumberPad_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-RSNumberPad_Example"; path = Pods_RSNumberPad_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A1FBF8DB5E0934336FCC8AF7A645E5B /* Pods-RSNumberPad_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RSNumberPad_Example-dummy.m"; sourceTree = "<group>"; };
+		8B84F0EABE763115E422C10D92E02A8F /* RSNumberPad-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RSNumberPad-umbrella.h"; sourceTree = "<group>"; };
+		926EAD2D00B1A05077171E1FB4FF06D7 /* Pods-RSNumberPad_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RSNumberPad_Tests-dummy.m"; sourceTree = "<group>"; };
+		95C0AD395E51FCC150CF4979CBF27A22 /* Pods-RSNumberPad_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSNumberPad_Example-Info.plist"; sourceTree = "<group>"; };
+		98AFEC3952E6E206BC12ED2869C987CC /* RSNumberPad-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RSNumberPad-Info.plist"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A384A25BFC81FB1160EFA7A8C6312CBD /* RSNumberPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSNumberPad.debug.xcconfig; sourceTree = "<group>"; };
+		AC7DCE33005406D2C187DA357C0C505F /* Pods-RSNumberPad_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RSNumberPad_Example-umbrella.h"; sourceTree = "<group>"; };
+		AD79B95E7B3315EF01307CE9A8B06BB5 /* Pods-RSNumberPad_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RSNumberPad_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B3CCE1A40F9951C21F060844B21F767C /* RSNumberPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = RSNumberPad.release.xcconfig; sourceTree = "<group>"; };
+		B5AB7089EBADB58624D279F08796F49A /* RSNumberPad.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RSNumberPad.modulemap; sourceTree = "<group>"; };
+		C8D17D96FAF1441CEEE585FDD0B2B79C /* Pods-RSNumberPad_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RSNumberPad_Tests-Info.plist"; sourceTree = "<group>"; };
+		D3CE2B29C34ADB3479FDE99D2AC4255E /* Pods-RSNumberPad_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-RSNumberPad_Example.modulemap"; sourceTree = "<group>"; };
+		D734ACAB8DBA43F4B80FCFF282BFADD6 /* RSNumberPad.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RSNumberPad.swift; path = Sources/RSNumberPad/RSNumberPad.swift; sourceTree = "<group>"; };
+		E3AB31D1A9BCC6EB960B03C2CA8199DB /* Pods-RSNumberPad_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RSNumberPad_Tests-umbrella.h"; sourceTree = "<group>"; };
+		E67D85B7490E2256FD87AE08DE16EC5E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8B67D370953D7775F6F4BD956A7FD49B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91C0B8C5C01BC318CCB95C3DCF55AC2D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F1D586A9C7CC04B3B4E01A70D59AD6A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				944785D7DC7D1FC5FDA80A22C5B4E11F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E850796876127A4F58224B2E833BE199 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB3E022C0C70BFAA3A81818B6C3CC793 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14153B2DA86AE08C9791AA09A6220FBD /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				E67D85B7490E2256FD87AE08DE16EC5E /* LICENSE */,
+				608605B3A2A833F3157A9E12B708841B /* README.md */,
+				0AFA485C27532D94337109935699DDD3 /* RSNumberPad.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		8BBB976EF78B9C710591E411AF8A2C00 /* RSNumberPad */ = {
+			isa = PBXGroup;
+			children = (
+				5D875781C6E7170CFD61FB037F215166 /* KeychainManager.swift */,
+				38BA4C8A8F394AB6C51E9E7106B6C50F /* KeyPadButtonState.swift */,
+				15E1322152722DD753C0A8488EB0D895 /* KeypadViewCreator.swift */,
+				3B0F1051EFE44912977774C658952679 /* KeyPadViewModel.swift */,
+				5FF77D852ECEB4F45D7D9EB937716347 /* RandomKeyPad.swift */,
+				D734ACAB8DBA43F4B80FCFF282BFADD6 /* RSNumberPad.swift */,
+				14153B2DA86AE08C9791AA09A6220FBD /* Pod */,
+				CD9495F3CCD31B53C82C6C6FE8AB7A47 /* Support Files */,
+			);
+			name = RSNumberPad;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		B3E73AD396D5F6B76283678B17B65111 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BBB976EF78B9C710591E411AF8A2C00 /* RSNumberPad */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		BE032C18443042FD012390A0F78B1B33 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8392BA762FDFEBC38DAEE79F613CB0D5 /* Pods-RSNumberPad_Example */,
+				525E2CFE775FCB95D98D10ACBE7FA853 /* Pods-RSNumberPad_Tests */,
+				0ABC3D638986A864E61F2D26C7B906F4 /* RSNumberPad */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD9495F3CCD31B53C82C6C6FE8AB7A47 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5AB7089EBADB58624D279F08796F49A /* RSNumberPad.modulemap */,
+				21A2B1D3743A9A922B03BC7228BB3485 /* RSNumberPad-dummy.m */,
+				98AFEC3952E6E206BC12ED2869C987CC /* RSNumberPad-Info.plist */,
+				761703394BA3948E5EC68A84FE7C008B /* RSNumberPad-prefix.pch */,
+				8B84F0EABE763115E422C10D92E02A8F /* RSNumberPad-umbrella.h */,
+				A384A25BFC81FB1160EFA7A8C6312CBD /* RSNumberPad.debug.xcconfig */,
+				B3CCE1A40F9951C21F060844B21F767C /* RSNumberPad.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/RSNumberPad";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				B3E73AD396D5F6B76283678B17B65111 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				BE032C18443042FD012390A0F78B1B33 /* Products */,
+				FBD02805B907D2F223CDFEC4B4A686EC /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB0B7A48C92A8B56EF156E886B6D9756 /* Pods-RSNumberPad_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				610D3EF7B0681EB8279C839B763E59FA /* Pods-RSNumberPad_Tests.modulemap */,
+				129894AA3E7C1FDDF281B1AC510884B9 /* Pods-RSNumberPad_Tests-acknowledgements.markdown */,
+				09D5EDAD3CA6BF5F4375260ADB935703 /* Pods-RSNumberPad_Tests-acknowledgements.plist */,
+				926EAD2D00B1A05077171E1FB4FF06D7 /* Pods-RSNumberPad_Tests-dummy.m */,
+				C8D17D96FAF1441CEEE585FDD0B2B79C /* Pods-RSNumberPad_Tests-Info.plist */,
+				E3AB31D1A9BCC6EB960B03C2CA8199DB /* Pods-RSNumberPad_Tests-umbrella.h */,
+				AD79B95E7B3315EF01307CE9A8B06BB5 /* Pods-RSNumberPad_Tests.debug.xcconfig */,
+				59AC8BACFC3EDA2985E5C8C5DDC39F5B /* Pods-RSNumberPad_Tests.release.xcconfig */,
+			);
+			name = "Pods-RSNumberPad_Tests";
+			path = "Target Support Files/Pods-RSNumberPad_Tests";
+			sourceTree = "<group>";
+		};
+		EB2D24E39CE6AAC858B0C8D068AB2948 /* Pods-RSNumberPad_Example */ = {
+			isa = PBXGroup;
+			children = (
+				D3CE2B29C34ADB3479FDE99D2AC4255E /* Pods-RSNumberPad_Example.modulemap */,
+				7CB6E3F1711056960FD6304BA62DE038 /* Pods-RSNumberPad_Example-acknowledgements.markdown */,
+				36B36730879ED04EAC26FD74D80504CD /* Pods-RSNumberPad_Example-acknowledgements.plist */,
+				8A1FBF8DB5E0934336FCC8AF7A645E5B /* Pods-RSNumberPad_Example-dummy.m */,
+				14E96639AAB41CFE05E88CA6CFC128C7 /* Pods-RSNumberPad_Example-frameworks.sh */,
+				95C0AD395E51FCC150CF4979CBF27A22 /* Pods-RSNumberPad_Example-Info.plist */,
+				AC7DCE33005406D2C187DA357C0C505F /* Pods-RSNumberPad_Example-umbrella.h */,
+				03B5A8A25317BB695C5FD86708FE19F8 /* Pods-RSNumberPad_Example.debug.xcconfig */,
+				0FDE2A5B442A33C6678D7164CA86736E /* Pods-RSNumberPad_Example.release.xcconfig */,
+			);
+			name = "Pods-RSNumberPad_Example";
+			path = "Target Support Files/Pods-RSNumberPad_Example";
+			sourceTree = "<group>";
+		};
+		FBD02805B907D2F223CDFEC4B4A686EC /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EB2D24E39CE6AAC858B0C8D068AB2948 /* Pods-RSNumberPad_Example */,
+				EB0B7A48C92A8B56EF156E886B6D9756 /* Pods-RSNumberPad_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		47E4CF9AD7393BE70D69A6D60D097F27 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				399DCC7EEA3E7D53DFE8FCC97BC57E7C /* Pods-RSNumberPad_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0FC477EB3F4A2F05FBB1A00114D6F32 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				66AF39F5F87EF9E62396616B039771AC /* RSNumberPad-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76187C2A9D0D257BF0B0FCBBB3B55AD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73D9FC4DE17E32A43550D269261425D6 /* Pods-RSNumberPad_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C894760D07C8A6BC192BA5584FB18528 /* Pods-RSNumberPad_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 578EB56D5A6C4A504CA51CC0AE9EA94D /* Build configuration list for PBXNativeTarget "Pods-RSNumberPad_Example" */;
+			buildPhases = (
+				F76187C2A9D0D257BF0B0FCBBB3B55AD /* Headers */,
+				D5651033D612519EE6538C58468EADA2 /* Sources */,
+				8B67D370953D7775F6F4BD956A7FD49B /* Frameworks */,
+				B4F97A1560A2C5179D054D79A5EA9CDD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7347E7069E8634ADA4F0B68FAE4835E5 /* PBXTargetDependency */,
+			);
+			name = "Pods-RSNumberPad_Example";
+			productName = Pods_RSNumberPad_Example;
+			productReference = 8392BA762FDFEBC38DAEE79F613CB0D5 /* Pods-RSNumberPad_Example */;
+			productType = "com.apple.product-type.framework";
+		};
+		CC7C81F25A9D7E59B8F95A11322AB76B /* RSNumberPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06D7D11069EA4D067DD84CB9B02B364D /* Build configuration list for PBXNativeTarget "RSNumberPad" */;
+			buildPhases = (
+				E0FC477EB3F4A2F05FBB1A00114D6F32 /* Headers */,
+				13C259F20BDEACE2FEC63738BB572E69 /* Sources */,
+				E850796876127A4F58224B2E833BE199 /* Frameworks */,
+				95EB4C1BB05C33FE485D7F6A2FB8F949 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RSNumberPad;
+			productName = RSNumberPad;
+			productReference = 0ABC3D638986A864E61F2D26C7B906F4 /* RSNumberPad */;
+			productType = "com.apple.product-type.framework";
+		};
+		DCC4654C815D6ACCF70A0FEA008B0850 /* Pods-RSNumberPad_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F2DAEF9E7FCF98100E3398E32ED1267 /* Build configuration list for PBXNativeTarget "Pods-RSNumberPad_Tests" */;
+			buildPhases = (
+				47E4CF9AD7393BE70D69A6D60D097F27 /* Headers */,
+				4ACECD8F417D9EA768F84FB35FCA2C3D /* Sources */,
+				8F1D586A9C7CC04B3B4E01A70D59AD6A /* Frameworks */,
+				0F6F0B5D4060BC8FB0431DB48B755B9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B63C25268687EFEF21D3079F02972264 /* PBXTargetDependency */,
+			);
+			name = "Pods-RSNumberPad_Tests";
+			productName = Pods_RSNumberPad_Tests;
+			productReference = 525E2CFE775FCB95D98D10ACBE7FA853 /* Pods-RSNumberPad_Tests */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = BE032C18443042FD012390A0F78B1B33 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C894760D07C8A6BC192BA5584FB18528 /* Pods-RSNumberPad_Example */,
+				DCC4654C815D6ACCF70A0FEA008B0850 /* Pods-RSNumberPad_Tests */,
+				CC7C81F25A9D7E59B8F95A11322AB76B /* RSNumberPad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0F6F0B5D4060BC8FB0431DB48B755B9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95EB4C1BB05C33FE485D7F6A2FB8F949 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B4F97A1560A2C5179D054D79A5EA9CDD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		13C259F20BDEACE2FEC63738BB572E69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFD4E644466E0693BEBC0A5B627E017 /* KeychainManager.swift in Sources */,
+				55BE16FBE883DE3F9E577522D9ACFE96 /* KeyPadButtonState.swift in Sources */,
+				B3F6F8462A81F2C89E03B6C50BDA6630 /* KeypadViewCreator.swift in Sources */,
+				4253B9919F60488E3684BF2DBFAA6F2E /* KeyPadViewModel.swift in Sources */,
+				50AC48F4E139D869D2C4EF7B0BB47DCB /* RandomKeyPad.swift in Sources */,
+				18608846BBDD39782716E339DBB4CD79 /* RSNumberPad.swift in Sources */,
+				9CD4FF33F21DDD794DDDD3C2FC27FE57 /* RSNumberPad-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4ACECD8F417D9EA768F84FB35FCA2C3D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95096D91E782ABEA7228A2C244434154 /* Pods-RSNumberPad_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5651033D612519EE6538C58468EADA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7320B8458E9950ABE327CF973AF8B248 /* Pods-RSNumberPad_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7347E7069E8634ADA4F0B68FAE4835E5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSNumberPad;
+			target = CC7C81F25A9D7E59B8F95A11322AB76B /* RSNumberPad */;
+			targetProxy = 84DD01B7F2A07391BD0231E52283412F /* PBXContainerItemProxy */;
+		};
+		B63C25268687EFEF21D3079F02972264 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RSNumberPad_Example";
+			target = C894760D07C8A6BC192BA5584FB18528 /* Pods-RSNumberPad_Example */;
+			targetProxy = C4F0F66F4CB5ED7C44051E393166DD01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		24ADF88E3DD3DE83F22C7D0BE9834FDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03B5A8A25317BB695C5FD86708FE19F8 /* Pods-RSNumberPad_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSNumberPad_Example/Pods-RSNumberPad_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSNumberPad_Example/Pods-RSNumberPad_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2C3BA3D8B2965464D787398E35A21CA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD79B95E7B3315EF01307CE9A8B06BB5 /* Pods-RSNumberPad_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSNumberPad_Tests/Pods-RSNumberPad_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSNumberPad_Tests/Pods-RSNumberPad_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		422593E1BEFBBD272EEAABFF04C40155 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A384A25BFC81FB1160EFA7A8C6312CBD /* RSNumberPad.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RSNumberPad/RSNumberPad-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSNumberPad/RSNumberPad-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RSNumberPad/RSNumberPad.modulemap";
+				PRODUCT_MODULE_NAME = RSNumberPad;
+				PRODUCT_NAME = RSNumberPad;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5864B213130ED9A2542E788499B7C31A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59AC8BACFC3EDA2985E5C8C5DDC39F5B /* Pods-RSNumberPad_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSNumberPad_Tests/Pods-RSNumberPad_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSNumberPad_Tests/Pods-RSNumberPad_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7EE7A78859F657F6BEFC651185B43192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		ABD4500D203A3D4C5346D3C9A9D143C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FDE2A5B442A33C6678D7164CA86736E /* Pods-RSNumberPad_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-RSNumberPad_Example/Pods-RSNumberPad_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-RSNumberPad_Example/Pods-RSNumberPad_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C90CE73FEA34051EE5BD53DAC645DA72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3CCE1A40F9951C21F060844B21F767C /* RSNumberPad.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RSNumberPad/RSNumberPad-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RSNumberPad/RSNumberPad-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RSNumberPad/RSNumberPad.modulemap";
+				PRODUCT_MODULE_NAME = RSNumberPad;
+				PRODUCT_NAME = RSNumberPad;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D299434AB35E7FD6F7921C8EF24742FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06D7D11069EA4D067DD84CB9B02B364D /* Build configuration list for PBXNativeTarget "RSNumberPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				422593E1BEFBBD272EEAABFF04C40155 /* Debug */,
+				C90CE73FEA34051EE5BD53DAC645DA72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F2DAEF9E7FCF98100E3398E32ED1267 /* Build configuration list for PBXNativeTarget "Pods-RSNumberPad_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C3BA3D8B2965464D787398E35A21CA8 /* Debug */,
+				5864B213130ED9A2542E788499B7C31A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D299434AB35E7FD6F7921C8EF24742FF /* Debug */,
+				7EE7A78859F657F6BEFC651185B43192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		578EB56D5A6C4A504CA51CC0AE9EA94D /* Build configuration list for PBXNativeTarget "Pods-RSNumberPad_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24ADF88E3DD3DE83F22C7D0BE9834FDE /* Debug */,
+				ABD4500D203A3D4C5346D3C9A9D143C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
