@@ -14,7 +14,7 @@ This library offers a randomly changing number keypad to the user, enhancing sec
 
 
 ## Example
-<img src="https://github.com/devxsby/RSNumberPad/assets/80062632/e0683dc7-6ad1-4a91-87a0-f39a3c97090a" width="30%/"><br>
+<img src="https://github.com/devxsby/RSNumberPad/assets/80062632/362ee560-a9b3-4b37-bd34-2914ce6bc5fb" width="30%/"><br>
 
 <br>
 
