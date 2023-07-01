@@ -10,7 +10,7 @@ import UIKit
 import RSNumberPad
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet private weak var numberPadTextField: RSNumberPad!
     
     override func viewDidLoad() {
@@ -18,25 +18,29 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func saveButtonDidTap(_ sender: Any) {
-        guard let password = numberPadTextField.text else {
-            print("No password entered.")
+        guard let password = numberPadTextField.text, !password.isEmpty else {
+            showAlert(withTitle: "Error", message: "No password entered.")
             return
         }
         numberPadTextField.savePassword(key: "password", password: password)
-        print("Password has been saved.")
+        showAlert(withTitle: "Success", message: "Password has been saved.")
     }
     
     @IBAction private func checkButtonDidTap(_ sender: Any) {
-        
-        guard let password = numberPadTextField.text else {
-            print("No password entered.")
+        guard let password = numberPadTextField.text, !password.isEmpty else {
+            showAlert(withTitle: "Error", message: "No password entered.")
             return
         }
         if numberPadTextField.checkPassword(key: "password", password: password) {
-            print("Input matches the saved password.")
+            showAlert(withTitle: "Success", message: "Input matches the saved password.")
         } else {
-            print("Input doesn't match the saved password.")
+            showAlert(withTitle: "Error", message: "Input doesn't match the saved password.")
         }
     }
+    
+    private func showAlert(withTitle title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
-
