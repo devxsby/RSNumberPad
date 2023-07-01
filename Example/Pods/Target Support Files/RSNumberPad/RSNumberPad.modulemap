@@ -1,6 +1,0 @@
-framework module RSNumberPad {
-  umbrella header "RSNumberPad-umbrella.h"
-
-  export *
-  module * { export * }
-}
