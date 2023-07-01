@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CryptoKit
 
 public class RSNumberPad: UITextField {
     
@@ -56,6 +57,25 @@ public class RSNumberPad: UITextField {
             button.setTitle(buttonState.title, for: .normal)
         }
     }
+    
+    public func savePassword(key: String, password: String) {
+        let hashedPassword = generateHash(from: password)
+        _ = KeychainManager.save(key: key, data: hashedPassword)
+    }
+    
+    public func checkPassword(key: String, password: String) -> Bool {
+        let hashedPassword = generateHash(from: password)
+        let savedPassword = KeychainManager.load(key: key)
+        
+        return hashedPassword == savedPassword
+    }
+    
+    private func generateHash(from string: String) -> String {
+        let inputData = Data(string.utf8)
+        let hashedData = SHA256.hash(data: inputData)
+        let hashedString = hashedData.compactMap { String(format: "%02x", $0) }.joined()
+        return hashedString
+    }
 }
 
 extension RSNumberPad: UITextFieldDelegate {
@@ -67,8 +87,8 @@ extension RSNumberPad: UITextFieldDelegate {
     }
     
     public func textField(_ textField: UITextField,
-                   shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
+                          shouldChangeCharactersIn range: NSRange,
+                          replacementString string: String) -> Bool {
         return false
     }
 }

@@ -17,7 +17,11 @@ class KeypadViewCreator {
         self.viewModel = viewModel
     }
     
-    private func createButton(frame: CGRect, state: KeyPadButtonState, tag: Int, target: Any?, action: Selector) -> UIButton {
+    private func createButton(frame: CGRect,
+                              state: KeyPadButtonState,
+                              tag: Int,
+                              target: Any?,
+                              action: Selector) -> UIButton {
         let button = UIButton(type: .system)
         button.frame = frame
         button.titleLabel?.font = state.font
@@ -55,7 +59,8 @@ class KeypadViewCreator {
                 let index = row * 3 + column
                 
                 if let state = viewModel.randomKeyPad.getValue(for: index) {
-                    let button = createButton(frame: frame, state: state, tag: index, target: self, action: #selector(didTapKeypadButton))
+                    let button = createButton(frame: frame, state: state, tag: index,
+                                              target: self, action: #selector(didTapKeypadButton))
                     keypadView.addSubview(button)
                 }
             }
@@ -105,4 +110,3 @@ class KeypadViewCreator {
         textField.resignFirstResponder()
     }
 }
-
