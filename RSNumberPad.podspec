@@ -8,12 +8,12 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RSNumberPad'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Random and Secure NumberPad'
   s.swift_version    = '5.0'
 
   s.description      = <<-DESC
-A library to store and verify algorithmically encrypted numbers in a keychain using a keypad with randomly changing numbers.
+  A library to store and verify algorithmically encrypted numbers in a keychain using a keypad with randomly changing numbers.
                        DESC
 
   s.homepage         = 'https://github.com/devxsby/RSNumberPad'
