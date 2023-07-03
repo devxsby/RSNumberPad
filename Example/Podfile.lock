@@ -1,5 +1,5 @@
 PODS:
-  - RSNumberPad (0.1.0)
+  - RSNumberPad (1.0.2)
 
 DEPENDENCIES:
   - RSNumberPad (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RSNumberPad: 2e6bb7be0ca00c30f58e13b8fa9b969c9ebc4842
+  RSNumberPad: af2cd6f24b152870faf1265ceb2da2c00ab97d23
 
 PODFILE CHECKSUM: 04c12f3941e67852ec8b76d94973baa52f9bd559
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.1
