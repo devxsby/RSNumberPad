@@ -6,43 +6,64 @@
 //
 
 import Foundation
-
 import Security
 
-class KeychainManager {
+final class KeychainManager {
     
-    class func save(key: String, data: String) -> OSStatus {
+    class func save(key: String, data: String) -> Result<Void, KeychainError> {
         guard let data = data.data(using: .utf8) else {
-            return errSecDecode
+            return .failure(.dataConversionFailed)
         }
         
-        let query = [
-            kSecClass as String: kSecClassGenericPassword as String,
-            kSecAttrAccount as String: key,
-            kSecValueData as String: data] as [String : Any]
+        let query = buildQuery(for: key, data: data)
         
         SecItemDelete(query as CFDictionary)
         
-        return SecItemAdd(query as CFDictionary, nil)
+        let status = SecItemAdd(query as CFDictionary, nil)
+        
+        if status == noErr {
+            return .success(())
+        } else {
+            return .failure(.saveFailed(status))
+        }
     }
     
-    class func load(key: String) -> String? {
-        let query = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: key,
-            kSecReturnData as String: kCFBooleanTrue as Any,
-            kSecMatchLimit as String: kSecMatchLimitOne] as [String : Any]
+    class func load(key: String) -> Result<String, KeychainError> {
+        let query = buildQuery(for: key, returnData: kCFBooleanTrue, matchLimit: kSecMatchLimitOne)
         
         var dataTypeRef: AnyObject? = nil
-        
-        let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
+        let status = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
         
         if status == noErr,
            let data = dataTypeRef as? Data,
            let password = String(data: data, encoding: .utf8) {
-            return password
+            return .success(password)
         } else {
-            return nil
+            return .failure(.loadFailed(status))
         }
+    }
+
+    private class func buildQuery(for key: String,
+                                  data: Data? = nil,
+                                  returnData: Any? = nil,
+                                  matchLimit: Any? = nil) -> [String: Any] {
+        var query = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key
+        ] as [String: Any]
+        
+        if let data = data {
+            query[kSecValueData as String] = data
+        }
+        
+        if let returnData = returnData {
+            query[kSecReturnData as String] = returnData
+        }
+        
+        if let matchLimit = matchLimit {
+            query[kSecMatchLimit as String] = matchLimit
+        }
+
+        return query
     }
 }

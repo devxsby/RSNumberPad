@@ -9,11 +9,10 @@ import UIKit
 import CryptoKit
 
 @available(iOS 13.0, *)
-public class RSNumberPad: UITextField {
+public final class RSNumberPad: UITextField {
     
-    private var viewModel = KeyPadViewModel()
-    private lazy var keypadViewCreator = KeypadViewCreator(textField: self,
-                                                           viewModel: self.viewModel)
+    private var keyPadActionHandler = KeyPadActionHandler()
+    private lazy var keypadViewCreator = KeypadViewCreator(textField: self, actions: self.keyPadActionHandler)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,12 +29,25 @@ public class RSNumberPad: UITextField {
                                                 action: #selector(didTapOutside))
         superview?.addGestureRecognizer(tapGesture)
         
-        viewModel.randomKeyPad.shuffleKeypad()
+        keyPadActionHandler.randomKeyPad.shuffleKeypad()
         inputView = keypadViewCreator.createRandomKeypadView()
         inputAccessoryView = keypadViewCreator.createDoneButtonToolbar()
         updateKeypadView()
         
         delegate = self
+    }
+    
+    func updateKeypadView() {
+        guard let keypadView = inputView else {
+            return
+        }
+        
+        for case let button as UIButton in keypadView.subviews {
+            guard let buttonState = keyPadActionHandler.getKeyValue(for: button.tag) else {
+                continue
+            }
+            button.setTitle(buttonState.title, for: .normal)
+        }
     }
     
     @objc private func didTapDoneButton() {
@@ -45,30 +57,35 @@ public class RSNumberPad: UITextField {
     @objc private func didTapOutside() {
         resignFirstResponder()
     }
-    
-    func updateKeypadView() {
-        guard let keypadView = inputView else {
-            return
-        }
-        
-        for case let button as UIButton in keypadView.subviews {
-            guard let buttonState = viewModel.getValue(for: button.tag) else {
-                continue
-            }
-            button.setTitle(buttonState.title, for: .normal)
-        }
-    }
+}
+
+// MARK: - Password Storage, Password Verification
+
+extension RSNumberPad {
     
     public func savePassword(key: String, password: String) {
         let hashedPassword = generateHash(from: password)
-        _ = KeychainManager.save(key: key, data: hashedPassword)
+        let result = KeychainManager.save(key: key, data: hashedPassword)
+        
+        switch result {
+        case .success():
+            debugPrint("Password saved successfully.")
+        case .failure(let error):
+            debugPrint("Failed to save password: \(error.localizedDescription)")
+        }
     }
     
     public func checkPassword(key: String, password: String) -> Bool {
         let hashedPassword = generateHash(from: password)
-        let savedPassword = KeychainManager.load(key: key)
+        let result = KeychainManager.load(key: key)
         
-        return hashedPassword == savedPassword
+        switch result {
+        case .success(let savedPassword):
+            return hashedPassword == savedPassword
+        case .failure(let error):
+            debugPrint("Failed to load password: \(error.localizedDescription)")
+            return false
+        }
     }
     
     private func generateHash(from string: String) -> String {
@@ -79,11 +96,13 @@ public class RSNumberPad: UITextField {
     }
 }
 
+// MARK: - UITextFieldDelegate
+
 @available(iOS 13.0, *)
 extension RSNumberPad: UITextFieldDelegate {
     
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        viewModel.randomKeyPad.shuffleKeypad()
+        keyPadActionHandler.randomKeyPad.shuffleKeypad()
         updateKeypadView()
         return true
     }

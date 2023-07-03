@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RandomKeyPad {
+final class RandomKeyPad {
     private var keypadValues: [[KeyPadButtonState?]] = []
     
     init() {
@@ -21,21 +21,15 @@ class RandomKeyPad {
     func shuffleKeypad() {
         var values = Array(0...9)
         values.shuffle()
-        
-        for row in 0..<3 {
-            for column in 0..<3 {
-                keypadValues[row][column] = .number(values[row * 3 + column])
-            }
+
+        for i in 0..<values.count {
+            keypadValues[i / 3][i % 3] = .number(values[i])
         }
         
-        keypadValues[3][0] = .random
-        keypadValues[3][1] = .number(values[9])
-        keypadValues[3][2] = .delete
+        keypadValues[3] = [.random, .number(values.last!), .delete]
     }
     
     func getValue(for index: Int) -> KeyPadButtonState? {
-        let row = index / 3
-        let column = index % 3
-        return keypadValues[row][column]
+        return keypadValues[index / 3][index % 3]
     }
 }

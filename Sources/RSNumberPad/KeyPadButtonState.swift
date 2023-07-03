@@ -7,6 +7,7 @@
 
 import UIKit
 
+@frozen
 enum KeyPadButtonState {
     case number(Int)
     case delete

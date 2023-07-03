@@ -1,5 +1,5 @@
 //
-//  KeyPadViewModel.swift
+//  KeyPadActionHandler.swift
 //  RSNumberPad
 //
 //  Created by devxsby on 2023/07/01.
@@ -7,23 +7,34 @@
 
 import Foundation
 
-class KeyPadViewModel {
+protocol KeyPadActions {
+    var randomKeyPad: RandomKeyPad { get set }
+    func shuffleKeys()
+    func getKeyValue(for index: Int) -> KeyPadButtonState?
+    func handleButtonTap(with title: String)
+}
+
+final class KeyPadActionHandler: KeyPadActions {
     var randomKeyPad: RandomKeyPad
-    var buttonTapped: ((String) -> Void)?
+    private var buttonTapped: ((String) -> Void)?
     
     init(randomKeyPad: RandomKeyPad = RandomKeyPad()) {
         self.randomKeyPad = randomKeyPad
     }
     
-    func shuffle() {
+    func shuffleKeys() {
         randomKeyPad.shuffleKeypad()
     }
     
-    func getValue(for index: Int) -> KeyPadButtonState? {
+    func getKeyValue(for index: Int) -> KeyPadButtonState? {
         return randomKeyPad.getValue(for: index)
     }
     
-    func buttonTitleTapped(_ title: String) {
+    func handleButtonTap(with title: String) {
         buttonTapped?(title)
+    }
+    
+    func setButtonTappedAction(_ action: @escaping (String) -> Void) {
+        self.buttonTapped = action
     }
 }
