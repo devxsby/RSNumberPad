@@ -14,7 +14,7 @@ This library offers a randomly changing number keypad to the user, enhancing sec
 
 
 ## Example
-<img src="https://github.com/devxsby/RSNumberPad/assets/80062632/362ee560-a9b3-4b37-bd34-2914ce6bc5fb" width="30%/"><br>
+<img src="https://github.com/devxsby/RSNumberPad/assets/80062632/0a7cfff3-84d4-4922-b522-730316dadb5eb" width="30%/"><br>
 
 <br>
 
@@ -34,7 +34,7 @@ This library offers a randomly changing number keypad to the user, enhancing sec
     let package = Package(
       name: "AppName",
       dependencies: [
-        .Package(url: "https://github.com/devxsby/RSNumberPad", .upToNextMajor(from: "1.0.0")),
+        .Package(url: "https://github.com/devxsby/RSNumberPad", .upToNextMajor(from: "1.0.2")),
       ]
     )
     ```
