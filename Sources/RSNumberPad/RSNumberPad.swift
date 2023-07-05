@@ -11,6 +11,8 @@ import CryptoKit
 @available(iOS 13.0, *)
 public final class RSNumberPad: UITextField {
     
+    private var keyboardHeight: CGFloat = 0
+    private var originalWindowFrame: CGRect = UIScreen.main.bounds
     private var keyPadActionHandler = KeyPadActionHandler()
     private lazy var keypadViewCreator = KeypadViewCreator(textField: self, actions: self.keyPadActionHandler)
     
@@ -22,6 +24,7 @@ public final class RSNumberPad: UITextField {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureNumberPadView()
+        addObservers()
     }
     
     private func configureNumberPadView() {
@@ -50,12 +53,60 @@ public final class RSNumberPad: UITextField {
         }
     }
     
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification,
+                                               object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationChanged),
+                                               name: UIDevice.orientationDidChangeNotification,
+                                               object: nil)
+    }
+    
     @objc private func didTapDoneButton() {
         resignFirstResponder()
     }
     
     @objc private func didTapOutside() {
         resignFirstResponder()
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                keyboardHeight = keyboardSize.height
+            }
+        }
+        
+        let textFieldBottomPosition = convert(frame, to: nil).maxY
+        let screenHieght = UIScreen.main.bounds.height
+        
+        if screenHieght - textFieldBottomPosition < keyboardHeight {
+            let shiftAmount = self.keyboardHeight - (screenHieght - textFieldBottomPosition) + 20
+            if let window = UIApplication.shared.windows.first {
+                originalWindowFrame = window.frame
+                UIView.animate(withDuration: 0.25) {
+                    window.frame = window.frame.offsetBy(dx: 0, dy: -shiftAmount)
+                }
+            }
+        }
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        if let window = UIApplication.shared.windows.first {
+            UIView.animate(withDuration: 0.25) {
+                window.frame = self.originalWindowFrame
+            }
+        }
+    }
+    
+    @objc private func orientationChanged(_ notification: Notification) {
+        if self.isFirstResponder {
+            self.resignFirstResponder()
+            self.becomeFirstResponder()
+        }
     }
 }
 
