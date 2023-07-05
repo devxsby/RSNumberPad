@@ -8,8 +8,8 @@
 import Foundation
 
 extension CALayer {
-    func applyShadow(color: CGColor = UIColor.gray.cgColor,
-                     opacity: Float = 0.5,
+    func applyShadow(color: CGColor = UIColor.black.cgColor,
+                     opacity: Float = 0.3,
                      offset: CGSize = .zero,
                      radius: CGFloat = 2,
                      masksToBounds: Bool = false) {

@@ -28,7 +28,7 @@ final class KeypadViewCreator: KeypadViewCreation {
         let keypadView = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 240))
         let buttonSize = calculateButtonSize(for: keypadView.bounds)
         
-        keypadView.backgroundColor = UIColor(red: 219/255, green: 211/255, blue: 217/255, alpha: 0)
+        keypadView.backgroundColor = UIColor.keypadBackgroundColor
         
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -68,14 +68,15 @@ final class KeypadViewCreator: KeypadViewCreation {
         let screenSize = UIScreen.main.bounds
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 44))
         
-        let chevronDownButton = UIBarButtonItem(image: UIImage(systemName: "keyboard.chevron.compact.down"),
+        let keyboardDownButton = UIBarButtonItem(image: UIImage(systemName: "keyboard.chevron.compact.down"),
                                                 style: .plain,
                                                 target: self,
                                                 action: #selector(didTapDoneButton))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
-        toolbar.setItems([flexibleSpace, chevronDownButton], animated: false)
-        toolbar.tintColor = .black
+        toolbar.setItems([flexibleSpace, keyboardDownButton], animated: false)
+        toolbar.backgroundColor = UIColor.keypadBackgroundColor
+        toolbar.tintColor = UIColor.buttonTextColor
         
         return toolbar
     }
@@ -127,11 +128,12 @@ extension KeypadViewCreator {
         button.titleLabel?.font = state.font
         button.layer.cornerRadius = 5
         button.layer.applyShadow()
-        button.tintColor = .black
         button.tag = tag
         button.setTitle(state.title, for: .normal)
         button.addTarget(self, action: #selector(didTapKeypadButton), for: .touchUpInside)
         button.backgroundColor = state.backgroundColor
+        button.setTitleColor(state.textColor, for: .normal)
         return button
     }
+
 }

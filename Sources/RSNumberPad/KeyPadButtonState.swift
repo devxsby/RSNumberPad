@@ -27,10 +27,14 @@ enum KeyPadButtonState {
     var backgroundColor: UIColor {
         switch self {
         case .number:
-            return .white
+            return UIColor.buttonBackgroundColor
         case .random, .delete:
             return .clear
         }
+    }
+    
+    var textColor: UIColor {
+        return UIColor.buttonTextColor
     }
     
     var font: UIFont {
