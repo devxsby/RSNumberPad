@@ -46,11 +46,17 @@ public final class RSNumberPad: UITextField {
             return
         }
         
-        for case let button as UIButton in keypadView.subviews {
-            guard let buttonState = keyPadActionHandler.getKeyValue(for: button.tag) else {
-                continue
+        updateButtonsInView(keypadView)
+    }
+    
+    private func updateButtonsInView(_ view: UIView) {
+        for subview in view.subviews {
+            if let button = subview as? UIButton,
+               let buttonState = keyPadActionHandler.getKeyValue(for: button.tag) {
+                button.setTitle(buttonState.title, for: .normal)
+            } else {
+                updateButtonsInView(subview)
             }
-            button.setTitle(buttonState.title, for: .normal)
         }
     }
     
