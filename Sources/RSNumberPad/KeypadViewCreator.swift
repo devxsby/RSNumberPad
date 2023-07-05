@@ -30,17 +30,36 @@ final class KeypadViewCreator: KeypadViewCreation {
         
         keypadView.backgroundColor = UIColor(red: 219/255, green: 211/255, blue: 217/255, alpha: 0)
         
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 7
+        
         for row in 0..<4 {
+            let rowStackView = UIStackView()
+            rowStackView.axis = .horizontal
+            rowStackView.distribution = .fillEqually
+            rowStackView.spacing = 5
+            
             for column in 0..<3 {
-                let buttonFrame = calculateButtonFrame(for: row, column: column, size: buttonSize)
+                let buttonFrame = calculateButtonFrame(for: row, column: column, size: buttonSize, containerBounds: rowStackView.bounds)
                 let index = row * 3 + column
                 
                 if let state = keyPadActions.randomKeyPad.getValue(for: index) {
                     let button = createButton(frame: buttonFrame, state: state, tag: index)
-                    keypadView.addSubview(button)
+                    rowStackView.addArrangedSubview(button)
                 }
             }
+            
+            stackView.addArrangedSubview(rowStackView)
         }
+        
+        keypadView.addSubview(stackView)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.leadingAnchor.constraint(equalTo: keypadView.leadingAnchor, constant: 5).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: keypadView.trailingAnchor, constant: -5).isActive = true
+        stackView.topAnchor.constraint(equalTo: keypadView.topAnchor, constant: 5).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: keypadView.bottomAnchor, constant: -20).isActive = true
         
         return keypadView
     }
@@ -88,12 +107,12 @@ final class KeypadViewCreator: KeypadViewCreation {
 extension KeypadViewCreator {
     
     private func calculateButtonSize(for bounds: CGRect) -> CGSize {
-        let buttonWidth: CGFloat = (bounds.width - 20) / 3
-        let buttonHeight: CGFloat = ((bounds.height - 30) / 4) - 5
+        let buttonWidth: CGFloat = (bounds.width - 20 - 5 * 2) / 3
+        let buttonHeight: CGFloat = ((bounds.height - 30 - 7 * 3) / 4) - 5
         return CGSize(width: buttonWidth, height: buttonHeight)
     }
-       
-    private func calculateButtonFrame(for row: Int, column: Int, size: CGSize) -> CGRect {
+    
+    private func calculateButtonFrame(for row: Int, column: Int, size: CGSize, containerBounds: CGRect) -> CGRect {
         let columnSpacing: CGFloat = 5
         let rowSpacing: CGFloat = 7
         let x = (CGFloat(column) * (size.width + columnSpacing)) + columnSpacing
@@ -104,6 +123,7 @@ extension KeypadViewCreator {
     private func createButton(frame: CGRect, state: KeyPadButtonState, tag: Int) -> UIButton {
         let button = UIButton(type: .system)
         button.frame = frame
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = state.font
         button.layer.cornerRadius = 5
         button.layer.applyShadow()

@@ -10,17 +10,17 @@ import UIKit
 @frozen
 enum KeyPadButtonState {
     case number(Int)
-    case delete
     case random
+    case delete
     
     var title: String {
         switch self {
         case .number(let value):
             return "\(value)"
-        case .delete:
-            return "⌫"
         case .random:
             return "⟳"
+        case .delete:
+            return "⌫"
         }
     }
     
@@ -28,7 +28,7 @@ enum KeyPadButtonState {
         switch self {
         case .number:
             return .white
-        case .delete, .random:
+        case .random, .delete:
             return .clear
         }
     }
