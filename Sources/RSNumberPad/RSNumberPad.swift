@@ -14,9 +14,6 @@ public final class RSNumberPad: UITextField {
     private var keyPadActionHandler = KeyPadActionHandler()
     private lazy var keypadViewCreator = KeypadViewCreator(textField: self, actions: self.keyPadActionHandler)
     
-    private var originalFrame: CGRect?
-    private var isKeyboardShown = false
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureNumberPadView()
