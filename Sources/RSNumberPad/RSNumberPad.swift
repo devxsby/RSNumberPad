@@ -30,6 +30,10 @@ public final class RSNumberPad: UITextField, PasswordManaging {
         configureTapGesture()
     }
     
+    override public func canPerformAction(_ action: Selector, withSender sender: Any?) -> Bool {
+        return false
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
