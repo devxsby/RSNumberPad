@@ -9,7 +9,7 @@ import UIKit
 import CryptoKit
 
 @available(iOS 13.0, *)
-public final class RSNumberPad: UITextField {
+public final class RSNumberPad: UITextField, PasswordManaging {
     
     private var keyPadActionHandler = KeyPadActionHandler()
     private lazy var keypadViewCreator = KeypadViewCreator(textField: self, actions: self.keyPadActionHandler)
@@ -24,9 +24,22 @@ public final class RSNumberPad: UITextField {
         configureNumberPadView()
     }
     
-    private func configureNumberPadView() {
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        configureTapGesture()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    private func configureTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOutside))
+        tapGesture.cancelsTouchesInView = false
         superview?.addGestureRecognizer(tapGesture)
+    }
+    
+    private func configureNumberPadView() {
         
         keyPadActionHandler.randomKeyPad.shuffleKeypad()
         inputView = keypadViewCreator.createRandomKeypadView()
@@ -68,6 +81,12 @@ public final class RSNumberPad: UITextField {
                                                object: nil)
     }
     
+}
+
+// MARK: - @objc Function
+
+extension RSNumberPad {
+    
     @objc private func didTapDoneButton() {
         resignFirstResponder()
     }
@@ -101,43 +120,6 @@ public final class RSNumberPad: UITextField {
         }
         
         window.frame.origin.y = 0
-    }
-}
-
-// MARK: - Password Storage, Password Verification
-
-extension RSNumberPad {
-    
-    public func savePassword(key: String, password: String) {
-        let hashedPassword = generateHash(from: password)
-        let result = KeychainManager.save(key: key, data: hashedPassword)
-        
-        switch result {
-        case .success():
-            debugPrint("Password saved successfully.")
-        case .failure(let error):
-            debugPrint("Failed to save password: \(error.localizedDescription)")
-        }
-    }
-    
-    public func checkPassword(key: String, password: String) -> Bool {
-        let hashedPassword = generateHash(from: password)
-        let result = KeychainManager.load(key: key)
-        
-        switch result {
-        case .success(let savedPassword):
-            return hashedPassword == savedPassword
-        case .failure(let error):
-            debugPrint("Failed to load password: \(error.localizedDescription)")
-            return false
-        }
-    }
-    
-    private func generateHash(from string: String) -> String {
-        let inputData = Data(string.utf8)
-        let hashedData = SHA256.hash(data: inputData)
-        let hashedString = hashedData.compactMap { String(format: "%02x", $0) }.joined()
-        return hashedString
     }
 }
 
