@@ -12,8 +12,8 @@ import CryptoKit
 public final class RSNumberPad: UITextField, PasswordManaging {
     
     private var tapGesture: UITapGestureRecognizer?
-    private var keyPadActionHandler = KeyPadActionHandler()
-    private lazy var keypadViewCreator = KeypadViewCreator(textField: self, actions: self.keyPadActionHandler)
+    private var keypadActionHandler = KeypadActionHandler()
+    private lazy var keypadViewCreator = KeypadViewCreator(textField: self, actions: self.keypadActionHandler)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,7 +48,7 @@ public final class RSNumberPad: UITextField, PasswordManaging {
     
     private func configureNumberPadView() {
         
-        keyPadActionHandler.randomKeyPad.shuffleKeypad()
+        keypadActionHandler.randomKeypad.shuffleKeypad()
         inputView = keypadViewCreator.createRandomKeypadView()
         inputAccessoryView = keypadViewCreator.createDoneButtonToolbar()
         updateKeypadView()
@@ -69,7 +69,7 @@ public final class RSNumberPad: UITextField, PasswordManaging {
     private func updateButtonsInView(_ view: UIView) {
         for subview in view.subviews {
             if let button = subview as? UIButton,
-               let buttonState = keyPadActionHandler.getKeyValue(for: button.tag) {
+               let buttonState = keypadActionHandler.getKeyValue(for: button.tag) {
                 button.setTitle(buttonState.title, for: .normal)
             } else {
                 updateButtonsInView(subview)
@@ -139,7 +139,7 @@ extension RSNumberPad {
 extension RSNumberPad: UITextFieldDelegate {
     
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        keyPadActionHandler.randomKeyPad.shuffleKeypad()
+        keypadActionHandler.randomKeypad.shuffleKeypad()
         updateKeypadView()
         return true
     }

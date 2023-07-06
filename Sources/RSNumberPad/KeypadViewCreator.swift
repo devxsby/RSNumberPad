@@ -16,11 +16,11 @@ protocol KeypadViewCreation {
 final class KeypadViewCreator: KeypadViewCreation {
     
     private let textField: RSNumberPad
-    private let keyPadActions: KeyPadActions
+    private let keypadActions: KeypadActions
     
-    init(textField: RSNumberPad, actions: KeyPadActions) {
+    init(textField: RSNumberPad, actions: KeypadActions) {
         self.textField = textField
-        self.keyPadActions = actions
+        self.keypadActions = actions
     }
     
     func createRandomKeypadView() -> UIView {
@@ -45,7 +45,7 @@ final class KeypadViewCreator: KeypadViewCreation {
                 let buttonFrame = calculateButtonFrame(for: row, column: column, size: buttonSize, containerBounds: rowStackView.bounds)
                 let index = row * 3 + column
                 
-                if let state = keyPadActions.randomKeyPad.getValue(for: index) {
+                if let state = keypadActions.randomKeypad.getValue(for: index) {
                     let button = createButton(frame: buttonFrame, state: state, tag: index)
                     rowStackView.addArrangedSubview(button)
                 }
@@ -88,12 +88,12 @@ final class KeypadViewCreator: KeypadViewCreation {
         
         switch buttonTitle {
         case "⟳":
-            keyPadActions.shuffleKeys()
+            keypadActions.shuffleKeys()
             textField.updateKeypadView()
         case "⌫":
             textField.deleteBackward()
         default:
-            keyPadActions.handleButtonTap(with: buttonTitle)
+            keypadActions.handleButtonTap(with: buttonTitle)
             textField.insertText(buttonTitle)
         }
     }
@@ -121,7 +121,7 @@ extension KeypadViewCreator {
         return CGRect(x: x, y: y, width: size.width, height: size.height)
     }
     
-    private func createButton(frame: CGRect, state: KeyPadButtonState, tag: Int) -> UIButton {
+    private func createButton(frame: CGRect, state: KeypadButtonState, tag: Int) -> UIButton {
         let button = UIButton(type: .system)
         button.frame = frame
         button.translatesAutoresizingMaskIntoConstraints = false

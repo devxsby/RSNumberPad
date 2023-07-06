@@ -1,5 +1,5 @@
 //
-//  UIColor+.swift
+//  UIColor+Theme.swift
 //  RSNumberPad
 //
 //  Created by devxsby on 2023/07/05.

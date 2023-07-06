@@ -1,5 +1,5 @@
 //
-//  PasswordManager.swift
+//  PasswordManaging.swift
 //  RSNumberPad
 //
 //  Created by devxsby on 2023/07/06.
@@ -14,7 +14,6 @@ public protocol PasswordManaging {
 }
 
 extension PasswordManaging {
-    
     public func savePassword(key: String, password: String) {
         let hashedPassword = generateHash(from: password)
         let result = KeychainManager.save(key: key, data: hashedPassword)

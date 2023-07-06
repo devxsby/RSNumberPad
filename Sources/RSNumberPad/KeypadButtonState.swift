@@ -1,5 +1,5 @@
 //
-//  KeyPadButtonState.swift
+//  KeypadButtonState.swift
 //  RSNumberPad
 //
 //  Created by devxsby on 2023/07/01.
@@ -8,7 +8,7 @@
 import UIKit
 
 @frozen
-enum KeyPadButtonState {
+enum KeypadButtonState {
     case number(Int)
     case random
     case delete

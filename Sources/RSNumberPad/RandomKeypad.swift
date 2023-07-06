@@ -1,5 +1,5 @@
 //
-//  RandomKeyPad.swift
+//  RandomKeypad.swift
 //  RSNumberPad
 //
 //  Created by devxsby on 2023/07/01.
@@ -7,15 +7,15 @@
 
 import Foundation
 
-final class RandomKeyPad {
-    private var keypadValues: [[KeyPadButtonState?]] = []
+final class RandomKeypad {
+    private var keypadValues: [[KeypadButtonState?]] = []
     
     init() {
         initializeKeypad()
     }
     
     private func initializeKeypad() {
-        keypadValues = Array(repeating: [KeyPadButtonState?](repeating: nil, count: 3), count: 4)
+        keypadValues = Array(repeating: [KeypadButtonState?](repeating: nil, count: 3), count: 4)
     }
     
     func shuffleKeypad() {
@@ -29,7 +29,7 @@ final class RandomKeyPad {
         keypadValues[3] = [.random, .number(values.last!), .delete]
     }
     
-    func getValue(for index: Int) -> KeyPadButtonState? {
+    func getValue(for index: Int) -> KeypadButtonState? {
         return keypadValues[index / 3][index % 3]
     }
 }
