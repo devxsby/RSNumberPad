@@ -1,9 +1,8 @@
 # RSNumberPad
 
-RSNumberPad is a library that provides a random number keypad for use in iOS applications.
+RSNumberPad is a library that provides a randomized numeric keypad for use in iOS applications.
 
-This library offers a randomly changing number keypad to the user, enhancing security during password input.
-
+By providing the user with a randomly changing numeric keypad, this library improves security during password entry. The library also supports dark mode and landscape mode, and automatically raises the view when the keyboard covers a text field to give the user a visual representation of the text field.
 
 <br>
 
@@ -14,7 +13,17 @@ This library offers a randomly changing number keypad to the user, enhancing sec
 
 
 ## Example
-<img src="https://github.com/devxsby/RSNumberPad/assets/80062632/0a7cfff3-84d4-4922-b522-730316dadb5eb" width="30%/"><br>
+
+| Light Mode | Dark Mode |
+|:------------:|:-----------:|
+|<img src="https://github.com/devxsby/RSNumberPad/assets/80062632/0a7cfff3-84d4-4922-b522-730316dadb5eb" width="50%">|<img src="https://github.com/devxsby/RSNumberPad/assets/80062632/cea8634f-9c8c-4f1a-a65b-f65de12910f4" width="50%">|
+
+
+| Landscape Mode (Light) | Landscape Mode (Dark) |
+|:------------:|:-----------:|
+|<img src="https://github.com/devxsby/RSNumberPad/assets/80062632/3e6ad5f3-0e11-4d69-8ca7-e6642a95c0f0" width="50%">|<img src="https://github.com/devxsby/RSNumberPad/assets/80062632/9cc42c8f-3b5d-48bf-a977-c4973d0d416f" width="50%">|
+
+
 
 <br>
 
@@ -34,7 +43,7 @@ This library offers a randomly changing number keypad to the user, enhancing sec
     let package = Package(
       name: "AppName",
       dependencies: [
-        .Package(url: "https://github.com/devxsby/RSNumberPad", .upToNextMajor(from: "1.0.2")),
+        .Package(url: "https://github.com/devxsby/RSNumberPad", .upToNextMajor(from: "1.1.0")),
       ]
     )
     ```
@@ -82,6 +91,14 @@ The password input by the user is hashed using the **SHA-256 algorithm**, and th
 ### 3. Password Verification
 The password entered by the user is hashed and compared with the value stored in the **keychain**. This verifies the accuracy of the password.
 
+### 4. Dark Mode Support
+RSNumberPad fully supports iOS's dark mode. When dark mode is enabled, the keypad's theme will automatically change to a dark color.
+
+### 5. Rotate Mode (Landscape Mode) Support
+RSNumberPad fully supports landscape mode. When the device is rotated to landscape orientation, the keypad view will automatically adjust to landscape mode.
+
+### 6. Prevent keypad obstruction
+If the keypad covers the text field, the view will automatically rise to allow the user to visually see the text field.
 
 In addition to these, this library applies the MVVM architecture to separate the view and the model and to allow the keypad view to be customized freely according to needs. Therefore, updates to control the state of each button (number, delete, random) or to change the shape, size, etc. of the keypad are planned.
 
