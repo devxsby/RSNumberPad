@@ -11,6 +11,7 @@ import CryptoKit
 @available(iOS 13.0, *)
 public final class RSNumberPad: UITextField, PasswordManaging {
     
+    private var tapGesture: UITapGestureRecognizer?
     private var keyPadActionHandler = KeyPadActionHandler()
     private lazy var keypadViewCreator = KeypadViewCreator(textField: self, actions: self.keyPadActionHandler)
     
@@ -34,9 +35,11 @@ public final class RSNumberPad: UITextField, PasswordManaging {
     }
     
     private func configureTapGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOutside))
-        tapGesture.cancelsTouchesInView = false
-        superview?.addGestureRecognizer(tapGesture)
+        if tapGesture == nil {
+            tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapOutside))
+            tapGesture?.cancelsTouchesInView = false
+            UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.addGestureRecognizer(tapGesture!)
+        }
     }
     
     private func configureNumberPadView() {
@@ -91,8 +94,11 @@ extension RSNumberPad {
         resignFirstResponder()
     }
     
-    @objc private func didTapOutside() {
-        resignFirstResponder()
+    @objc private func didTapOutside(_ gesture: UITapGestureRecognizer) {
+        let location = gesture.location(in: self)
+        if !self.bounds.contains(location) {
+            resignFirstResponder()
+        }
     }
     
     @objc private func keyboardWillShow(_ notification: NSNotification) {
