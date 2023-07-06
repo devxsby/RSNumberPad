@@ -69,9 +69,9 @@ final class KeypadViewCreator: KeypadViewCreation {
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: 44))
         
         let keyboardDownButton = UIBarButtonItem(image: UIImage(systemName: "keyboard.chevron.compact.down"),
-                                                style: .plain,
-                                                target: self,
-                                                action: #selector(didTapDoneButton))
+                                                 style: .plain,
+                                                 target: self,
+                                                 action: #selector(didTapDoneButton))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
         toolbar.setItems([flexibleSpace, keyboardDownButton], animated: false)
@@ -135,5 +135,4 @@ extension KeypadViewCreator {
         button.setTitleColor(state.textColor, for: .normal)
         return button
     }
-
 }

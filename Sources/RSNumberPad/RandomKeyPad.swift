@@ -21,7 +21,7 @@ final class RandomKeyPad {
     func shuffleKeypad() {
         var values = Array(0...9)
         values.shuffle()
-
+        
         for i in 0..<values.count {
             keypadValues[i / 3][i % 3] = .number(values[i])
         }

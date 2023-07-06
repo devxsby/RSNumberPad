@@ -18,7 +18,7 @@ extension UIColor {
             }
         }
     }
-
+    
     static var buttonBackgroundColor: UIColor {
         return UIColor { traitCollection in
             switch traitCollection.userInterfaceStyle {
@@ -29,7 +29,7 @@ extension UIColor {
             }
         }
     }
-
+    
     static var buttonTextColor: UIColor {
         return UIColor { traitCollection in
             switch traitCollection.userInterfaceStyle {

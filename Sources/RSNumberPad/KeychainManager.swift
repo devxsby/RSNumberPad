@@ -42,7 +42,7 @@ final class KeychainManager {
             return .failure(.loadFailed(status))
         }
     }
-
+    
     private class func buildQuery(for key: String,
                                   data: Data? = nil,
                                   returnData: Any? = nil,
@@ -63,7 +63,7 @@ final class KeychainManager {
         if let matchLimit = matchLimit {
             query[kSecMatchLimit as String] = matchLimit
         }
-
+        
         return query
     }
 }
