@@ -43,7 +43,7 @@ By providing the user with a randomly changing numeric keypad, this library impr
     let package = Package(
       name: "AppName",
       dependencies: [
-        .Package(url: "https://github.com/devxsby/RSNumberPad", .upToNextMajor(from: "1.1.0")),
+        .Package(url: "https://github.com/devxsby/RSNumberPad", .upToNextMajor(from: "1.2.0")),
       ]
     )
     ```
@@ -100,8 +100,13 @@ RSNumberPad fully supports landscape mode. When the device is rotated to landsca
 ### 6. Prevent keypad obstruction
 If the keypad covers the text field, the view will automatically rise to allow the user to visually see the text field.
 
-In addition to these, this library applies the MVVM architecture to separate the view and the model and to allow the keypad view to be customized freely according to needs. Therefore, updates to control the state of each button (number, delete, random) or to change the shape, size, etc. of the keypad are planned.
+### 7. Enhanced Security with Paste Prevention
+For enhanced security, RSNumberPad disables the copy and paste function within the text field. This makes it impossible for users to paste copied content into the text field, further securing sensitive data entry.
 
+### 8. Improve usability by dismissing the keypad
+In addition to the 'Done' button, RSNumberPad improves usability by allowing users to dismiss the keypad by tapping outside of the text field area. This feature provides a more intuitive way for users to control the keypad's visibility.
+
+In addition to these, this library applies the MVVM architecture to separate the view and the model and to allow the keypad view to be customized freely according to needs. Therefore, updates to control the state of each button (number, delete, random) or to change the shape, size, etc. of the keypad are planned.
 
 
 <br>
