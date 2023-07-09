@@ -5,7 +5,7 @@
 //  Created by devxsby on 2023/07/03.
 //
 
-import Foundation
+import UIKit
 
 extension CALayer {
     func applyShadow(color: CGColor = UIColor.black.cgColor,
