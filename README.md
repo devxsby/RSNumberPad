@@ -43,7 +43,7 @@ By providing the user with a randomly changing numeric keypad, this library impr
     let package = Package(
       name: "AppName",
       dependencies: [
-        .Package(url: "https://github.com/devxsby/RSNumberPad", .upToNextMajor(from: "1.3.0")),
+        .Package(url: "https://github.com/devxsby/RSNumberPad", .upToNextMajor(from: "1.3.2")),
       ]
     )
     ```
