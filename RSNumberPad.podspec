@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RSNumberPad'
-  s.version          = '1.2.0'
+  s.version          = '1.3.0'
   s.summary          = 'Random and Secure NumberPad'
   s.swift_version    = '5.0'
 

@@ -15,7 +15,8 @@ public protocol PasswordManaging {
 
 extension PasswordManaging {
     public func savePassword(key: String, password: String) {
-        let hashedPassword = generateHash(from: password)
+        let salt = getUUID()
+        let hashedPassword = generateHash(from: password, salt: salt)
         let result = KeychainManager.save(key: key, data: hashedPassword)
         
         switch result {
@@ -27,7 +28,8 @@ extension PasswordManaging {
     }
     
     public func checkPassword(key: String, password: String) -> Bool {
-        let hashedPassword = generateHash(from: password)
+        let salt = getUUID()
+        let hashedPassword = generateHash(from: password, salt: salt)
         let result = KeychainManager.load(key: key)
         
         switch result {
@@ -39,8 +41,12 @@ extension PasswordManaging {
         }
     }
     
-    func generateHash(from string: String) -> String {
-        let inputData = Data(string.utf8)
+    private func getUUID() -> String {
+        return UIDevice.current.identifierForVendor!.uuidString
+    }
+    
+    private func generateHash(from string: String, salt: String) -> String {
+        let inputData = Data(string.utf8) + Data(salt.utf8)
         let hashedData = SHA256.hash(data: inputData)
         let hashedString = hashedData.compactMap { String(format: "%02x", $0) }.joined()
         return hashedString
