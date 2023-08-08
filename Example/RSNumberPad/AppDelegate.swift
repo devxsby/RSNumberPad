@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  RSNumberPad
 //
-//  Created by 80062632 on 07/02/2023.
-//  Copyright (c) 2023 80062632. All rights reserved.
+//  Created by devxsby on 07/02/2023.
+//  Copyright (c) 2023 devxsby. All rights reserved.
 //
 
 import UIKit
