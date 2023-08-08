@@ -46,9 +46,9 @@ extension PasswordManaging {
     }
     
     private func generateHash(from string: String, salt: String) -> String {
-        let inputData = Data(string.utf8) + Data(salt.utf8)
+        let inputData = Data((string + salt).utf8)
         let hashedData = SHA256.hash(data: inputData)
-        let hashedString = hashedData.compactMap { String(format: "%02x", $0) }.joined()
+        let hashedString = hashedData.map { String(format: "%02hhx", $0) }.joined()
         return hashedString
     }
 }
