@@ -43,7 +43,7 @@ By providing the user with a randomly changing numeric keypad, this library impr
     let package = Package(
       name: "AppName",
       dependencies: [
-        .Package(url: "https://github.com/devxsby/RSNumberPad", .upToNextMajor(from: "1.2.0")),
+        .Package(url: "https://github.com/devxsby/RSNumberPad", .upToNextMajor(from: "1.3.0")),
       ]
     )
     ```
@@ -86,7 +86,7 @@ Use the `checkPassword(key: String, password: String)` method to verify the pass
 Each time the user invokes the keypad, **the positions of the numbers are randomly changed**. This makes it difficult to predict the user's password input pattern.
 
 ### 2. Password Hashing and Storage
-The password input by the user is hashed using the **SHA-256 algorithm**, and this hash value is safely stored in the iOS keychain.
+The password input by the user is hashed using the UUID를 조합한 **SALT algorithm**, and this hash value is safely stored in the iOS keychain.
 
 ### 3. Password Verification
 The password entered by the user is hashed and compared with the value stored in the **keychain**. This verifies the accuracy of the password.
